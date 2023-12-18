@@ -1,8 +1,8 @@
 pipeline {
-    steps {
-        step('run parallel') {
+    stages {
+        stage('run parallel') {
             parallel {
-                step('windows') {
+                stage('windows') {
                     agent {
                         label "windows"
                     }
@@ -10,7 +10,7 @@ pipeline {
                         ps 'Start-Sleep -sec 240'
                     }
                 }
-                step('linux') {
+                stage('linux') {
                     agent {
                         label "unix"
                     }                
