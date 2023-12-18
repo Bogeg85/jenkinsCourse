@@ -9,7 +9,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        ps 'Start-Sleep -sec 240'
+                        powershell 'Start-Sleep -sec 240'
                     }
                 }
                 stage('linux') {
