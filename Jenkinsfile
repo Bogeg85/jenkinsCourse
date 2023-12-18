@@ -6,7 +6,7 @@ pipeline {
         stage("checkout") {
             steps {
                 echo "*************checkout************"
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shlomihaimov/tests.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Bogeg85/jenkinsCourse.git']]])
             }
         }
         stage("Run tests") {
