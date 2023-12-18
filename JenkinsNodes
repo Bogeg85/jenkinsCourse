@@ -1,0 +1,24 @@
+pipeline {
+    steps {
+        step('run parallel') {
+            parallel {
+                step('windows') {
+                    agent {
+                        label "windows"
+                    }
+                    steps {
+                        ps 'Start-Sleep -sec 240'
+                    }
+                }
+                step('linux') {
+                    agent {
+                        label "unix"
+                    }                
+                    steps {
+                        sh 'sleep 30s'    
+                    }
+                }
+            }
+        }
+    }
+}
