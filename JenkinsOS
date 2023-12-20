@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('run parallel') {
+            parallel {
+                stage('windows') {
+                    agent {
+                        label "windows"
+                    }
+                    steps {
+                        println System.properties['os.name']
+                    }
+                }
+                stage('linux') {
+                    agent {
+                        label "unix"
+                    }                
+                    steps {
+                        println System.properties['os.name']
+                    }
+                }
+            }
+        }
+    }
+}
