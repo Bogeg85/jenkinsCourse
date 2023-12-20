@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        label "unix"
+    }  
+
+    stages {
+        stage('read version') {
+                steps {
+                    script{ datas = readYaml (file: 'config.yml') }
+                    echo datas.version.toString()
+                }
+            }
+        }
+    }
+}
