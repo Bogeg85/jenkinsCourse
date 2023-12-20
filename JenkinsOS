@@ -9,7 +9,7 @@ pipeline {
                         label "SlaveWindows"
                     }
                     steps {
-                        bat "winver"
+                        powershell 'systeminfo | findstr /B /C:"OS Name" /B /C:"OS Version"'
                     }
                 }
                 stage('linux') {
