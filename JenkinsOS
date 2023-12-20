@@ -6,7 +6,7 @@ pipeline {
             parallel {
                 stage('windows') {
                     agent {
-                        label "windows"
+                        label "SlaveWindows"
                     }
                     steps {
                         sh "echo System.properties['os.name']"
