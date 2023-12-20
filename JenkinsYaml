@@ -5,10 +5,9 @@ pipeline {
 
     stages {
         stage('read version') {
-                steps {
-                    script{ datas = readYaml (file: 'config.yml') }
-                    echo datas.version.toString()
-                }
+            steps {
+                script{ datas = readYaml (file: 'config.yml') }
+                echo datas.version.toString()
             }
         }
     }
