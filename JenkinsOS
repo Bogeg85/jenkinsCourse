@@ -9,7 +9,7 @@ pipeline {
                         label "SlaveWindows"
                     }
                     steps {
-                        sh "echo System.properties['os.name']"
+                        bat "echo ${System.properties['os.name']}"
                     }
                 }
                 stage('linux') {
@@ -17,7 +17,7 @@ pipeline {
                         label "unix"
                     }                
                     steps {
-                        sh "echo System.properties['os.name']"
+                        sh "echo ${System.properties['os.name']}"
                     }
                 }
             }
