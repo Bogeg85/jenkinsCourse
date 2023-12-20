@@ -9,7 +9,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        echo System.properties['os.name']
+                        sh "echo System.properties['os.name']"
                     }
                 }
                 stage('linux') {
@@ -17,7 +17,7 @@ pipeline {
                         label "unix"
                     }                
                     steps {
-                        echo System.properties['os.name']
+                        sh "echo System.properties['os.name']"
                     }
                 }
             }
